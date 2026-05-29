@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "everythingconverter"
+version = "0.1.0"
+description = "Convert (almost) any file into (almost) any other file, with a GUI."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "The Everything Converter" }]
+dependencies = [
+    "Pillow>=10.0",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+    "pymupdf>=1.23",
+]
+
+[project.optional-dependencies]
+full = [
+    "pillow-heif>=0.13",
+    "pyarrow>=14.0",
+    "lxml>=4.9",
+    "tabulate>=0.9",
+    "tkinterdnd2>=0.4",
+]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+everythingconverter = "everythingconverter.cli:main"
+
+[project.gui-scripts]
+everythingconverter-gui = "everythingconverter.gui:launch"
+
+[tool.setuptools.packages.find]
+include = ["everythingconverter*"]
