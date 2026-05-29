@@ -283,10 +283,14 @@ class ConverterApp:
         for name, category, available in self.reg.backend_status():
             mark = "✓" if available else "✗ (not installed)"
             lines.append(f"{mark}  {name}  [{category}]")
-        lines.append("\nTo add backends on macOS:")
-        lines.append("  brew install ffmpeg pandoc")
-        lines.append("  brew install --cask libreoffice")
-        lines.append("  pip install pillow pillow-heif pandas openpyxl pymupdf")
+        lines.append(
+            "\nMost backends are bundled, so images, audio, video, PDFs,"
+            "\ndocuments (incl. DOCX→PDF), data and archives work out of the box."
+        )
+        lines.append(
+            "\nOptional, for higher-fidelity Office files, install LibreOffice"
+            "\n(libreoffice.org) or pandoc (pandoc.org)."
+        )
         messagebox.showinfo("Diagnostics", "\n".join(lines))
 
 

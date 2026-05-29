@@ -37,17 +37,23 @@ class ImageConverter(Converter):
             self._pil_ok = True
         except ImportError:
             return
-        # Optional: enable HEIC/HEIF support if pillow-heif is installed.
+        # Optional: enable HEIC/HEIF (+ AVIF) support if pillow-heif is installed.
         try:
             import pillow_heif  # type: ignore
 
             pillow_heif.register_heif_opener()
+            # Newer pillow-heif also handles AVIF.
+            register_avif = getattr(pillow_heif, "register_avif_opener", None)
+            if callable(register_avif):
+                register_avif()
+                _READ.add("avif")
+                _WRITE.add("avif")
         except ImportError:
             self._READ_no_heif()
 
     def _READ_no_heif(self) -> None:
-        # Without pillow-heif we cannot read HEIC/HEIF; drop them from inputs.
-        for ext in ("heic", "heif"):
+        # Without pillow-heif we cannot read HEIC/HEIF/AVIF; drop them from inputs.
+        for ext in ("heic", "heif", "avif"):
             _READ.discard(ext)
 
     def available(self) -> bool:

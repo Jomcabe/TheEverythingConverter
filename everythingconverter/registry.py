@@ -16,31 +16,52 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from .converters import (
+    ArchiveRepackConverter,
     AudioConverter,
     CompressionConverter,
+    ConfigConverter,
     Converter,
     ConversionError,
     DataConverter,
+    DocxConverter,
     ImageConverter,
     LibreOfficeConverter,
+    MarkupConverter,
     PandocConverter,
     PdfConverter,
+    SubtitleConverter,
+    SvgConverter,
     VideoConverter,
     normalize_ext,
 )
 
 
 def _build_converters() -> list[Converter]:
-    """Instantiate all converters in priority order (first match wins)."""
+    """Instantiate all converters in priority order (first available wins).
+
+    Ordering notes:
+    * SVG is handled by its own converter before generic media.
+    * Pure-Python markup (md/html/txt) ranks above pandoc/LibreOffice because it
+      renders Markdown properly and always works (bundled in the app).
+    * LibreOffice ranks above the pure-Python DOCX converter so it wins for
+      complex Office files when installed; DocxConverter is the universal
+      fallback when it isn't.
+    """
     return [
         ImageConverter(),
+        SvgConverter(),
         AudioConverter(),
         VideoConverter(),
-        DataConverter(),
+        SubtitleConverter(),
+        MarkupConverter(),   # before DataConverter so HTML *documents* go here,
+        DataConverter(),     # while HTML *tables* -> csv/xlsx still fall to pandas
+        ConfigConverter(),
         PdfConverter(),
         PandocConverter(),
         LibreOfficeConverter(),
+        DocxConverter(),
         CompressionConverter(),
+        ArchiveRepackConverter(),
     ]
 
 

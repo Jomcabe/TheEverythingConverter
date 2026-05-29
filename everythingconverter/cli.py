@@ -102,10 +102,13 @@ def _cmd_doctor(reg: Registry) -> int:
     for name, category, ok in reg.backend_status():
         mark = "✓" if ok else "✗"
         print(f"  {mark}  {name:<32} [{category}]")
-    print("\nMissing backends? On macOS:")
-    print("  brew install ffmpeg pandoc")
+    print("\nMost backends are bundled in the downloadable app (ffmpeg, images,")
+    print("PDFs, documents, data, config, archives all work out of the box).")
+    print("\nRunning from source? Install the Python backends with:")
+    print("  pip install -r requirements.txt")
+    print("\nOptional extras for higher-fidelity Office files:")
+    print("  brew install pandoc")
     print("  brew install --cask libreoffice")
-    print("  pip install pillow pillow-heif pandas openpyxl pymupdf")
     return 0
 
 

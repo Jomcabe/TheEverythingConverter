@@ -26,8 +26,13 @@ ROOT = Path(SPECPATH).resolve().parent
 
 datas, binaries, hiddenimports = [], [], []
 
-# Packages without robust built-in hooks: collect everything they ship.
-for pkg in ("tkinterdnd2", "imageio_ffmpeg"):
+# Packages without robust built-in hooks (or that ship data files we need):
+# collect everything they bundle.
+for pkg in (
+    "tkinterdnd2", "imageio_ffmpeg",
+    "reportlab", "svglib", "fpdf",      # vector + PDF rendering (fonts/data)
+    "mammoth", "markdown", "html2text", # document pipeline
+):
     try:
         d, b, h = collect_all(pkg)
         datas += d
@@ -36,11 +41,15 @@ for pkg in ("tkinterdnd2", "imageio_ffmpeg"):
     except Exception:
         pass
 
+# Bundle our own data assets (the embedded DejaVu fonts used for PDF output).
+datas += [(str(ROOT / "everythingconverter" / "assets"), "everythingconverter/assets")]
+
 # Make sure optional backends are pulled in if installed.
 hiddenimports += [
     "PIL", "PIL.Image",
     "pandas", "openpyxl", "fitz",
-    "pillow_heif", "tabulate", "lxml", "pyarrow",
+    "pillow_heif", "tabulate", "lxml", "pyarrow", "bs4",
+    "yaml", "tomli_w", "tomllib",
 ]
 
 # Use a custom icon if one is present (.icns on mac, .ico on windows).

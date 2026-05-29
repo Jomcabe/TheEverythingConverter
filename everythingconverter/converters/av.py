@@ -133,3 +133,24 @@ class VideoConverter(Converter):
         width = int(options.get("gif_width", 480))
         vf = f"fps={fps},scale={width}:-1:flags=lanczos"
         _run_ffmpeg(["-i", str(src), "-vf", vf, str(dst)])
+
+
+SUBTITLES = {"srt", "vtt", "ass", "ssa", "sub"}
+
+
+class SubtitleConverter(Converter):
+    """Convert between subtitle/caption formats (srt, vtt, ass, ...) via ffmpeg."""
+
+    name = "ffmpeg subtitle converter"
+    category = "Subtitles"
+
+    def available(self) -> bool:
+        return _ffmpeg() is not None
+
+    def outputs_for(self, src_ext: str) -> set[str]:
+        if normalize_ext(src_ext) in SUBTITLES:
+            return set(SUBTITLES)
+        return set()
+
+    def convert(self, src: Path, dst: Path, **options) -> None:
+        _run_ffmpeg(["-i", str(src), str(dst)])

@@ -14,20 +14,26 @@ out *which* engine to use and routes the conversion automatically.
 
 | Category | Examples | Engine |
 |---|---|---|
-| **Images** | jpg · png · gif · bmp · tiff · webp · ico · heic/heif · tga · pcx → any image + **PDF** | [Pillow](https://python-pillow.org) (+ pillow-heif) |
+| **Images** | jpg · png · gif · bmp · tiff · webp · ico · heic/heif · **avif** · tga · pcx → any image + **PDF** | [Pillow](https://python-pillow.org) (+ pillow-heif) |
+| **Vector** | **svg → png/jpg/gif/tiff/bmp + PDF** | [svglib](https://github.com/deeplook/svglib) + [reportlab](https://www.reportlab.com) |
 | **Audio** | mp3 · wav · flac · aac · m4a · ogg · opus · aiff · wma → any audio | [ffmpeg](https://ffmpeg.org) |
 | **Video** | mp4 · mov · avi · mkv · webm · flv · wmv → any video, **extract audio**, or **GIF** | ffmpeg |
-| **Documents** | md · html · docx · odt · epub · rtf · txt · tex · ppt/pptx · xls/xlsx → PDF & each other | [pandoc](https://pandoc.org) + [LibreOffice](https://libreoffice.org) |
+| **Subtitles** | **srt ↔ vtt ↔ ass ↔ ssa ↔ sub** | ffmpeg |
+| **Documents** | **docx · md · html · txt → PDF** & each other (no LibreOffice needed) | [mammoth](https://github.com/mwilliamson/python-mammoth) · [markdown](https://python-markdown.github.io) · [fpdf2](https://py-pdf.github.io/fpdf2/) |
+| **Office (hi-fi)** | odt · epub · rtf · tex · ppt/pptx · xls/xlsx → PDF & each other | [pandoc](https://pandoc.org) + [LibreOffice](https://libreoffice.org) *(optional)* |
 | **PDF** | pdf → png/jpg/tiff (per page) · txt · html | [PyMuPDF](https://pymupdf.readthedocs.io) |
 | **Data / Sheets** | csv · tsv · json · xlsx · xls · parquet · html · xml → each other + Markdown | [pandas](https://pandas.pydata.org) |
-| **Archives** | gz ↔ bz2 ↔ xz recompression | Python stdlib |
+| **Config** | **json ↔ yaml ↔ toml** | PyYAML + tomli |
+| **Archives** | gz ↔ bz2 ↔ xz · **zip ↔ tar ↔ tgz ↔ tbz2 ↔ txz** | Python stdlib |
 
 The format matrix grows automatically as you install more backends — run
 `everythingconverter doctor` to see what's active.
 
-> Images, audio, video, PDFs, data files, and archives all work **out of the
-> box** in the downloadable app (a static ffmpeg is bundled in). Only Office
-> document conversion needs LibreOffice installed separately.
+> **Everything in bold works out of the box** in the downloadable app — images,
+> vector, audio, video, subtitles, **DOCX/Markdown/HTML → PDF**, data, config,
+> and archives are all bundled (including a static ffmpeg and embedded fonts).
+> LibreOffice/pandoc are only needed for higher-fidelity conversion of *complex*
+> Office files (odt, pptx, xlsx, epub, …).
 
 ---
 
