@@ -1,19 +1,36 @@
 # Python libraries used by The Everything Converter.
 # System tools (ffmpeg, pandoc, libreoffice) are installed separately — see setup.sh.
 
-# Images (HEIC/HEIF needs pillow-heif)
+# Images (HEIC/HEIF/AVIF needs pillow-heif)
 Pillow>=10.0
 pillow-heif>=0.13
+
+# Vector images (SVG -> png/jpg/pdf/...)
+svglib>=1.5
+reportlab>=4.0
 
 # Data / spreadsheets
 pandas>=2.0
 openpyxl>=3.1        # .xlsx read/write
 pyarrow>=14.0        # .parquet read/write
 lxml>=4.9            # .xml / .html tables
+beautifulsoup4>=4.12 # robust .html table parsing
 tabulate>=0.9        # DataFrame -> markdown
 
 # PDF (page rendering + text extraction)
 pymupdf>=1.23
+
+# Documents — pure-Python pipeline so DOCX/MD/HTML/TXT -> PDF works with no
+# LibreOffice install (these get bundled into the downloadable app).
+mammoth>=1.6          # DOCX -> HTML / Markdown / text
+markdown>=3.5         # Markdown -> HTML
+html2text>=2024.2     # HTML -> Markdown / text
+fpdf2>=2.7            # HTML / text -> PDF (with embedded DejaVu fonts)
+
+# Config files (json/yaml/toml). tomllib is stdlib on Python 3.11+.
+pyyaml>=6.0
+tomli-w>=1.0
+tomli>=2.0 ; python_version < "3.11"
 
 # Audio/video — ships a static ffmpeg binary so the packaged app needs no setup
 imageio-ffmpeg>=0.4.9
