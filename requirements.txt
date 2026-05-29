@@ -1,0 +1,22 @@
+# Python libraries used by The Everything Converter.
+# System tools (ffmpeg, pandoc, libreoffice) are installed separately — see setup.sh.
+
+# Images (HEIC/HEIF needs pillow-heif)
+Pillow>=10.0
+pillow-heif>=0.13
+
+# Data / spreadsheets
+pandas>=2.0
+openpyxl>=3.1        # .xlsx read/write
+pyarrow>=14.0        # .parquet read/write
+lxml>=4.9            # .xml / .html tables
+tabulate>=0.9        # DataFrame -> markdown
+
+# PDF (page rendering + text extraction)
+pymupdf>=1.23
+
+# Audio/video — ships a static ffmpeg binary so the packaged app needs no setup
+imageio-ffmpeg>=0.4.9
+
+# Optional: drag-and-drop in the GUI
+tkinterdnd2>=0.4

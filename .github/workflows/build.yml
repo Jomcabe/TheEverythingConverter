@@ -1,0 +1,76 @@
+name: Build desktop apps
+
+# Builds the macOS .dmg and Windows installer.
+# - On every push to a version tag (e.g. v0.1.0): publishes them to a GitHub Release.
+# - Manually (Actions tab -> Run workflow): builds them as downloadable artifacts.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to create/update the Release
+
+jobs:
+  build:
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            artifact: EverythingConverter-macOS.dmg
+          - os: windows-latest
+            artifact: EverythingConverter-Setup.exe
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyinstaller
+
+      # Refresh icons from source so the committed ones can't go stale.
+      - name: Generate icons
+        run: python packaging/make_icon.py
+
+      # macOS: build .app then wrap it in a compressed .dmg.
+      - name: Build macOS app + dmg
+        if: runner.os == 'macOS'
+        run: |
+          pyinstaller packaging/EverythingConverter.spec --noconfirm
+          hdiutil create -volname "The Everything Converter" \
+            -srcfolder "dist/The Everything Converter.app" \
+            -ov -format UDZO "dist/EverythingConverter-macOS.dmg"
+
+      # Windows: build the .exe folder then a one-click installer via Inno Setup.
+      - name: Install Inno Setup
+        if: runner.os == 'Windows'
+        run: choco install innosetup --no-progress -y
+
+      - name: Build Windows app + installer
+        if: runner.os == 'Windows'
+        run: |
+          pyinstaller packaging/EverythingConverter.spec --noconfirm
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" packaging\everythingconverter.iss
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: dist/${{ matrix.artifact }}
+          if-no-files-found: error
+
+      - name: Publish to Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ matrix.artifact }}
+          generate_release_notes: true
