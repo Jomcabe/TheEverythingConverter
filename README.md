@@ -25,9 +25,42 @@ out *which* engine to use and routes the conversion automatically.
 The format matrix grows automatically as you install more backends — run
 `everythingconverter doctor` to see what's active.
 
+> Images, audio, video, PDFs, data files, and archives all work **out of the
+> box** in the downloadable app (a static ffmpeg is bundled in). Only Office
+> document conversion needs LibreOffice installed separately.
+
 ---
 
-## Quick start (macOS)
+## 📦 Install (for everyone — no Python, no terminal)
+
+Grab the ready-made app from the
+[**Releases**](../../releases/latest) page and double-click:
+
+| Your computer | Download | Then |
+|---|---|---|
+| **macOS** | `EverythingConverter-macOS.dmg` | Open the DMG, drag the app to **Applications**, launch it. |
+| **Windows** | `EverythingConverter-Setup.exe` | Run it — installs the app and adds Start Menu / desktop shortcuts. |
+
+That's it. Send a friend the link to your Releases page and they click once.
+
+<details>
+<summary><b>First-launch security prompt?</b> (because the app isn't code-signed)</summary>
+
+These builds aren't signed with a paid Apple/Microsoft developer certificate,
+so the OS shows a one-time warning. It's safe to bypass:
+
+* **macOS** – right-click (or Control-click) the app → **Open** → **Open**.
+  (Or System Settings → Privacy & Security → *Open Anyway*.)
+* **Windows** – on the blue "Windows protected your PC" screen click
+  **More info** → **Run anyway**.
+
+To remove the prompt entirely you'd need to sign/notarize the app with paid
+developer certificates.
+</details>
+
+---
+
+## Quick start (macOS, from source)
 
 ```bash
 git clone <this-repo> TheEverythingConverter
@@ -89,6 +122,43 @@ reg.convert("data.csv", "data.xlsx")
 # What can this become?
 print(reg.available_targets("movie.mov"))
 ```
+
+---
+
+## Building & releasing the apps
+
+You don't need a Mac *and* a Windows PC — **GitHub builds both for you.**
+
+### Automatic (recommended)
+
+Push a version tag and the [build workflow](.github/workflows/build.yml) builds
+the macOS `.dmg` and the Windows installer on GitHub's runners and attaches them
+to a new [Release](../../releases):
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Then share the Releases page link with your friends. (You can also trigger a
+build manually from the **Actions** tab → *Build desktop apps* → *Run workflow*;
+that uploads the installers as downloadable artifacts without making a release.)
+
+### Build locally
+
+```bash
+# macOS  -> dist/EverythingConverter-macOS.dmg
+./packaging/build_macos.sh
+
+# Windows (PowerShell) -> dist/EverythingConverter-Setup.exe
+#   (install Inno Setup first for the one-click installer; otherwise a .zip)
+.\packaging\build_windows.ps1
+```
+
+Both use [PyInstaller](https://pyinstaller.org) with
+[`packaging/EverythingConverter.spec`](packaging/EverythingConverter.spec),
+which bundles Python, all the pip backends, and a static ffmpeg into one
+self-contained app.
 
 ---
 

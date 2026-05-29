@@ -8,8 +8,10 @@ is trivially installed on macOS via ``brew install ffmpeg``.
 
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
+from functools import lru_cache
 from pathlib import Path
 
 from .base import Converter, ConversionError, normalize_ext
@@ -24,8 +26,33 @@ VIDEO = {
 }
 
 
+@lru_cache(maxsize=1)
 def _ffmpeg() -> str | None:
-    return shutil.which("ffmpeg")
+    """Locate an ffmpeg binary.
+
+    Resolution order:
+    1. ``ECONV_FFMPEG`` environment variable (explicit override).
+    2. ``ffmpeg`` on PATH (e.g. a Homebrew install).
+    3. The static binary shipped by the ``imageio-ffmpeg`` package — this is
+       what makes the packaged app work with zero setup on the user's machine.
+    """
+    override = os.environ.get("ECONV_FFMPEG")
+    if override and Path(override).exists():
+        return override
+
+    found = shutil.which("ffmpeg")
+    if found:
+        return found
+
+    try:
+        import imageio_ffmpeg  # type: ignore
+
+        exe = imageio_ffmpeg.get_ffmpeg_exe()
+        if exe and Path(exe).exists():
+            return exe
+    except Exception:  # noqa: BLE001 - any failure just means "not available"
+        pass
+    return None
 
 
 def _run_ffmpeg(args: list[str]) -> None:

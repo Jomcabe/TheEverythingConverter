@@ -15,6 +15,7 @@ dependencies = [
     "pandas>=2.0",
     "openpyxl>=3.1",
     "pymupdf>=1.23",
+    "imageio-ffmpeg>=0.4.9",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +27,7 @@ full = [
     "tkinterdnd2>=0.4",
 ]
 dev = ["pytest>=7.0"]
+build = ["pyinstaller>=6.0"]
 
 [project.scripts]
 everythingconverter = "everythingconverter.cli:main"
