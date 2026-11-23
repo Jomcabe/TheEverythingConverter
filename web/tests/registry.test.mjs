@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { formats,routes,targetsFor,detectFormats,inputFormats } from '../src/registry.js';
+import {readFileSync} from 'node:fs';
+import {initializeImageMagick,MagickImage,MagickReadSettings,MagickColors,ImageMagick} from '@imagemagick/magick-wasm';
+import {query,convert} from 'pandoc-wasm';
+const ids=new Set(formats.map(f=>f.id));
+test('conversion catalog has unique definitions and real endpoints',()=>{assert.equal(ids.size,formats.length);const pairs=new Set();for(const r of routes){assert(ids.has(r.from)&&ids.has(r.to));assert.notEqual(r.from,r.to);const pair=r.from+'|'+r.to;assert(!pairs.has(pair),'Duplicate route '+pair);pairs.add(pair);}assert(inputFormats.length>200);});
+test('archive filenames choose the longest matching extension',()=>{assert.equal(detectFormats('example.tar.gz')[0].ext,'tar.gz');assert(detectFormats('POSCAR').some(f=>f.id==='atom:poscar'));});
+test('every advertised document reader and writer exists in pinned Pandoc',async()=>{const readers=await query({query:'input-formats'}),writers=await query({query:'output-formats'});for(const f of formats.filter(f=>f.engine==='document')){if(targetsFor(f.id).length)assert(readers.includes(f.pandoc),f.pandoc);if(routes.some(r=>r.to===f.id))assert(writers.includes(f.ext==='txt'?'plain':f.pandoc),f.pandoc);}});
+test('Word document with Unicode survives Pandoc round trip',async()=>{const a=await convert({from:'markdown',to:'docx','output-file':'test.docx'},'# Title\n\nα + β. José.\n\n|A|B|\n|-|-|\n|1|2|',{});const b=await convert({from:'docx',to:'plain','input-files':['test.docx']},null,{'test.docx':a.files['test.docx']});assert(b.stdout.includes('José'));assert(b.stdout.includes('α'));});
+test('image writers encode actual files and common formats decode',async()=>{await initializeImageMagick(readFileSync(new URL('../node_modules/@imagemagick/magick-wasm/dist/x86/magick.wasm',import.meta.url)));const failures=[];for(const f of formats.filter(f=>f.engine==='image'&&routes.some(r=>r.to===f.id&&r.engine==='image'))){const img=MagickImage.create(MagickColors.Red,16,16);try{let output;img.write(f.coder,b=>output=new Uint8Array(b));assert(output.length>0,f.ext);if(['png','jpg','webp','avif','jxl','bmp','tiff','ico','tga','psd'].includes(f.ext))ImageMagick.read(output,new MagickReadSettings({format:f.coder}),i=>assert(i.width>0));}catch(e){failures.push(f.id+': '+e.message);}finally{img.dispose();}}assert.deepEqual(failures,[]);});

@@ -20,3 +20,10 @@ htmlcov/
 # Scratch outputs
 /tmp_out/
 *.tmp
+
+# Browser build
+web/node_modules/
+web/dist/
+
+web/qa-dist/
+web/image-checks.json

@@ -1,0 +1,6 @@
+import {formats,routes,inputFormats,categories,getFormat,targetsFor} from '../src/registry.js';
+import {writeFileSync} from 'node:fs';
+const lines=['# Everything Converter: web format catalog','','Free conversions at https://jocabe.com/converter/. Files stay on the visitor’s device.','',`${inputFormats.length} input format entries, ${new Set(inputFormats.map(f=>f.ext)).size} distinct input extensions, ${routes.length} explicit conversion routes across ${categories.length} categories.`, '', 'Extensions can describe different content: choose the matching category. A defined route is not a guarantee that every proprietary variant is readable.',''];
+for(const category of categories){lines.push('## '+category,'','| Format | Extension | Outputs |','| --- | --- | --- |');for(const f of formats.filter(f=>f.category===category)){const rs=targetsFor(f.id);lines.push(`| ${f.name} | .${f.ext} | ${rs.length?rs.map(r=>'.'+getFormat(r.to).ext).join(', '):'Output only'} |`);}lines.push('');}
+writeFileSync(new URL('../FORMATS.md',import.meta.url),lines.join('\n'));
+console.log(`${inputFormats.length} input entries; ${new Set(inputFormats.map(f=>f.ext)).size} extensions; ${routes.length} routes; ${categories.length} categories`);

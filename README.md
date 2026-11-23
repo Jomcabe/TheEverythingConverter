@@ -216,3 +216,13 @@ isn't installed.
 ## License
 
 MIT
+
+## Browser version
+
+A free, unlisted browser version is available at **https://jocabe.com/converter/**.
+It adds scientific arrays, spectroscopy/diffraction, atomic structures, meshes,
+bioinformatics, geography, and font containers alongside everyday conversions.
+All processing happens on the visitor's device. There are no file uploads or
+paid conversion APIs. Complex Office layouts and some proprietary formats have
+limits. See [web/README.md](web/README.md) and the full
+[web format matrix](web/FORMATS.md).

@@ -1,0 +1,1670 @@
+[
+  {
+    "id": "3FR",
+    "name": "Hasselblad CFV/H3D39II Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "3G2",
+    "name": "Media Container",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "3GP",
+    "name": "Media Container",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "A",
+    "name": "Raw alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "AAI",
+    "name": "AAI Dune image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "AI",
+    "name": "Adobe Illustrator CS2",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "APNG",
+    "name": "Animated Portable Network Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ART",
+    "name": "PFS: 1st Publisher Clip Art",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ARW",
+    "name": "Sony Alpha Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "ASE",
+    "name": "Aseprite Sprite Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ASEPRITE",
+    "name": "Aseprite Sprite Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ASHLAR",
+    "name": "Image sequence laid out in continuous irregular courses",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "AVCI",
+    "name": "AVC Image File Format",
+    "read": false,
+    "write": false
+  },
+  {
+    "id": "AVI",
+    "name": "Microsoft Audio/Visual Interleaved",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "AVIF",
+    "name": "AV1 Image File Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "AVS",
+    "name": "AVS X image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "B",
+    "name": "Raw blue samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BAYER",
+    "name": "Raw mosaiced samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BAYERA",
+    "name": "Raw mosaiced and alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BGR",
+    "name": "Raw blue, green, and red samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BGRA",
+    "name": "Raw blue, green, red, and alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BGRO",
+    "name": "Raw blue, green, red, and opacity samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BMP",
+    "name": "Microsoft Windows bitmap image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BMP2",
+    "name": "Microsoft Windows bitmap image (V2)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BMP3",
+    "name": "Microsoft Windows bitmap image (V3)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "BRF",
+    "name": "BRF ASCII Braille format",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "C",
+    "name": "Raw cyan samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "C2PA",
+    "name": "C2PA Provenance Metadata",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CAL",
+    "name": "Continuous Acquisition and Life-cycle Support Type 1",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CALS",
+    "name": "Continuous Acquisition and Life-cycle Support Type 1",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CANVAS",
+    "name": "Constant image uniform color",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CAPTION",
+    "name": "Caption",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CIN",
+    "name": "Cineon Image File",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CIP",
+    "name": "Cisco IP phone image format",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "CLIP",
+    "name": "Image Clip Mask",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CMYK",
+    "name": "Raw cyan, magenta, yellow, and black samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CMYKA",
+    "name": "Raw cyan, magenta, yellow, black, and alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CR2",
+    "name": "Canon Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CR3",
+    "name": "Canon Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CRW",
+    "name": "Canon Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CUBE",
+    "name": "Cube LUT",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "CUR",
+    "name": "Microsoft icon",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "CUT",
+    "name": "DR Halo",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "DATA",
+    "name": "Base64-encoded inline images",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "DCM",
+    "name": "Digital Imaging and Communications in Medicine image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "DCR",
+    "name": "Kodak Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "DCRAW",
+    "name": "Raw Photo Decoder (dcraw)",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "DCX",
+    "name": "ZSoft IBM PC multi-page Paintbrush",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "DDS",
+    "name": "Microsoft DirectDraw Surface",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "DFONT",
+    "name": "Multi-face font package",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "DNG",
+    "name": "Digital Negative Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "DPX",
+    "name": "SMPTE 268M-2003 (DPX 2.0)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "DXT1",
+    "name": "Microsoft DirectDraw Surface",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "DXT5",
+    "name": "Microsoft DirectDraw Surface",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPDF",
+    "name": "Encapsulated Portable Document Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPI",
+    "name": "Encapsulated PostScript Interchange format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPS",
+    "name": "Encapsulated PostScript",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPS2",
+    "name": "Level II Encapsulated PostScript",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "EPS3",
+    "name": "Level III Encapsulated PostScript",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "EPSF",
+    "name": "Encapsulated PostScript",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPSI",
+    "name": "Encapsulated PostScript Interchange format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPT",
+    "name": "Encapsulated PostScript with TIFF preview",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPT2",
+    "name": "Encapsulated PostScript Level II with TIFF preview",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "EPT3",
+    "name": "Encapsulated PostScript Level III with TIFF preview",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ERF",
+    "name": "Epson Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "EXR",
+    "name": "High Dynamic-range (HDR)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FARBFELD",
+    "name": "Farbfeld",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FAX",
+    "name": "Group 3 FAX",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FF",
+    "name": "Farbfeld",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FFF",
+    "name": "Hasselblad CFV/H3D39II Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "FILE",
+    "name": "Uniform Resource Locator (file://)",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "FITS",
+    "name": "Flexible Image Transport System",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FL32",
+    "name": "FilmLight",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FLV",
+    "name": "Flash Video Stream",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FRACTAL",
+    "name": "Plasma fractal image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "FTP",
+    "name": "Uniform Resource Locator (ftp://)",
+    "read": false,
+    "write": false
+  },
+  {
+    "id": "FTS",
+    "name": "Flexible Image Transport System",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "FTXT",
+    "name": "Formatted text image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "G",
+    "name": "Raw green samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "G3",
+    "name": "Group 3 FAX",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "G4",
+    "name": "Group 4 FAX",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "GIF",
+    "name": "CompuServe graphics interchange format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "GIF87",
+    "name": "CompuServe graphics interchange format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "GRADIENT",
+    "name": "Gradual linear passing from one shade to another",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "GRAY",
+    "name": "Raw gray samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "GRAYA",
+    "name": "Raw gray and alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "GROUP4",
+    "name": "Raw CCITT Group4",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "HALD",
+    "name": "Identity Hald color lookup table image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "HDR",
+    "name": "Radiance RGBE image format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "HEIC",
+    "name": "High Efficiency Image Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "HEIF",
+    "name": "High Efficiency Image Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "HISTOGRAM",
+    "name": "Histogram of the image",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "HRZ",
+    "name": "Slow Scan TeleVision",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "HTM",
+    "name": "Hypertext Markup Language and a client-side image map",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "HTML",
+    "name": "Hypertext Markup Language and a client-side image map",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "HTTP",
+    "name": "Uniform Resource Locator (http://)",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "HTTPS",
+    "name": "Uniform Resource Locator (https://)",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "ICB",
+    "name": "Truevision Targa image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ICN",
+    "name": "Microsoft icon",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ICO",
+    "name": "Microsoft icon",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ICON",
+    "name": "Microsoft icon",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "IIQ",
+    "name": "Phase One Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "INFO",
+    "name": "The image format and characteristics",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "INLINE",
+    "name": "Base64-encoded inline images",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "IPL",
+    "name": "IPL Image Sequence",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ISOBRL",
+    "name": "ISO/TR 11548-1 format",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "ISOBRL6",
+    "name": "ISO/TR 11548-1 format 6dot",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "J2C",
+    "name": "JPEG-2000 Code Stream Syntax",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "J2K",
+    "name": "JPEG-2000 Code Stream Syntax",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JNG",
+    "name": "JPEG Network Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JNX",
+    "name": "Garmin tile format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "JP2",
+    "name": "JPEG-2000 File Format Syntax",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPC",
+    "name": "JPEG-2000 Code Stream Syntax",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPE",
+    "name": "Joint Photographic Experts Group JFIF format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPEG",
+    "name": "Joint Photographic Experts Group JFIF format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPG",
+    "name": "Joint Photographic Experts Group JFIF format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPM",
+    "name": "JPEG-2000 File Format Syntax",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPS",
+    "name": "Joint Photographic Experts Group JFIF format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JPT",
+    "name": "JPEG-2000 File Format Syntax",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "JSON",
+    "name": "The image format and characteristics",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "JXL",
+    "name": "JPEG XL (ISO/IEC 18181)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "K",
+    "name": "Raw black samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "K25",
+    "name": "Kodak Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "KDC",
+    "name": "Kodak Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "KERNEL",
+    "name": "Morphology Kernel",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "LABEL",
+    "name": "Image label",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "M",
+    "name": "Raw magenta samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "M2V",
+    "name": "MPEG Video Stream",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "M4V",
+    "name": "Raw VIDEO-4 Video",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MAC",
+    "name": "MAC Paint",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MAP",
+    "name": "Colormap intensities and indices",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MASK",
+    "name": "Image Clip Mask",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MAT",
+    "name": "MATLAB level 5 image format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MATTE",
+    "name": "MATTE format",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "MDC",
+    "name": "Minolta Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MEF",
+    "name": "Mamiya Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MIFF",
+    "name": "Magick Image File Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MKV",
+    "name": "Multimedia Container",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MNG",
+    "name": "Multiple-image Network Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MONO",
+    "name": "Raw bi-level bitmap",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MOS",
+    "name": "Aptus Leaf Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MOV",
+    "name": "MPEG Video Stream",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MP4",
+    "name": "VIDEO-4 Video Stream",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MPC",
+    "name": "Magick Pixel Cache image format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MPEG",
+    "name": "MPEG Video Stream",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MPG",
+    "name": "MPEG Video Stream",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MPO",
+    "name": "Joint Photographic Experts Group JFIF format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MRW",
+    "name": "Sony (Minolta) Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MSL",
+    "name": "Magick Scripting Language",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "MSVG",
+    "name": "ImageMagick's own SVG internal renderer",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MTV",
+    "name": "MTV Raytracing image format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "MVG",
+    "name": "Magick Vector Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "NEF",
+    "name": "Nikon Digital SLR Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "NRW",
+    "name": "Nikon Digital SLR Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "NULL",
+    "name": "Constant image of uniform color",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "O",
+    "name": "Raw opacity samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "ORA",
+    "name": "OpenRaster format",
+    "read": false,
+    "write": false
+  },
+  {
+    "id": "ORF",
+    "name": "Olympus Digital Camera Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "OTB",
+    "name": "On-the-air bitmap",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "OTF",
+    "name": "Open Type font",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PAL",
+    "name": "16bit/pixel interleaved YUV",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PALM",
+    "name": "Palm pixmap",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PAM",
+    "name": "Common 2-dimensional bitmap format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PANGO",
+    "name": "Pango Markup Language",
+    "read": false,
+    "write": false
+  },
+  {
+    "id": "PATTERN",
+    "name": "Predefined pattern",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PBM",
+    "name": "Portable bitmap format (black and white)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PCD",
+    "name": "Photo CD",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PCDS",
+    "name": "Photo CD",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PCL",
+    "name": "Printer Control Language",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PCT",
+    "name": "Apple Macintosh QuickDraw/PICT",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PCX",
+    "name": "ZSoft IBM PC Paintbrush",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PDB",
+    "name": "Palm Database ImageViewer Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PDF",
+    "name": "Portable Document Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PDFA",
+    "name": "Portable Document Archive Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PEF",
+    "name": "Pentax Electronic Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PES",
+    "name": "Embrid Embroidery Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PFA",
+    "name": "Postscript Type 1 font (ASCII)",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PFB",
+    "name": "Postscript Type 1 font (binary)",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PFM",
+    "name": "Portable float format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PGM",
+    "name": "Portable graymap format (gray scale)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PGX",
+    "name": "JPEG 2000 uncompressed format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PHM",
+    "name": "Portable half float format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PICON",
+    "name": "Personal Icon",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PICT",
+    "name": "Apple Macintosh QuickDraw/PICT",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PIX",
+    "name": "Alias/Wavefront RLE image format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PJPEG",
+    "name": "Joint Photographic Experts Group JFIF format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PLASMA",
+    "name": "Plasma fractal image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "PNG",
+    "name": "Portable Network Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNG00",
+    "name": "PNG inheriting bit-depth, color-type from original, if possible",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNG24",
+    "name": "opaque or binary transparent 24-bit RGB",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNG32",
+    "name": "opaque or transparent 32-bit RGBA",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNG48",
+    "name": "opaque or binary transparent 48-bit RGB",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNG64",
+    "name": "opaque or transparent 64-bit RGBA",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNG8",
+    "name": "8-bit indexed with optional binary transparency",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PNM",
+    "name": "Portable anymap",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "POCKETMOD",
+    "name": "Pocketmod Personal Organizer",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PPM",
+    "name": "Portable pixmap format (color)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PS",
+    "name": "PostScript",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PS2",
+    "name": "Level II PostScript",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "PS3",
+    "name": "Level III PostScript",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "PSB",
+    "name": "Adobe Large Document Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PSD",
+    "name": "Adobe Photoshop bitmap",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PTIF",
+    "name": "Pyramid encoded TIFF",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "PWP",
+    "name": "Seattle Film Works",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "QOI",
+    "name": "Quite OK image format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "R",
+    "name": "Raw red samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "RADIAL-GRADIENT",
+    "name": "Gradual radial passing from one shade to another",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RAF",
+    "name": "Fuji CCD-RAW Graphic Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RAS",
+    "name": "SUN Rasterfile",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "RAW",
+    "name": "Raw",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RGB",
+    "name": "Raw red, green, and blue samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "RGB565",
+    "name": "Raw red, green, blue samples in 565 format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RGBA",
+    "name": "Raw red, green, blue, and alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "RGBO",
+    "name": "Raw red, green, blue, and opacity samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "RGF",
+    "name": "LEGO Mindstorms EV3 Robot Graphic Format (black and white)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "RLA",
+    "name": "Alias/Wavefront image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RLE",
+    "name": "Utah Run length encoded image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RMF",
+    "name": "Raw Media Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RW2",
+    "name": "Panasonic Lumix Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "RWL",
+    "name": "Leica Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SCR",
+    "name": "ZX-Spectrum SCREEN$",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SCREENSHOT",
+    "name": "Screen shot",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SCT",
+    "name": "Scitex HandShake",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SF3",
+    "name": "Simple File Format Family Images",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SFW",
+    "name": "Seattle Film Works",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SGI",
+    "name": "Irix RGB image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SHTML",
+    "name": "Hypertext Markup Language and a client-side image map",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "SIX",
+    "name": "DEC SIXEL Graphics Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SIXEL",
+    "name": "DEC SIXEL Graphics Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SPARSE-COLOR",
+    "name": "Sparse Color",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "SR2",
+    "name": "Sony Raw Format 2",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SRF",
+    "name": "Sony Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "SRW",
+    "name": "Samsung Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "STEGANO",
+    "name": "Steganographic image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "STI",
+    "name": "Sinar CaptureShop Raw Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "STRIMG",
+    "name": "String to image and back",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SUN",
+    "name": "SUN Rasterfile",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SVG",
+    "name": "Scalable Vector Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "SVGZ",
+    "name": "Compressed Scalable Vector Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "TEXT",
+    "name": "Text",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "TGA",
+    "name": "Truevision Targa image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "THUMBNAIL",
+    "name": "EXIF Profile Thumbnail",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "TIFF",
+    "name": "Tagged Image File Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "TIFF64",
+    "name": "Tagged Image File Format (64-bit)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "TILE",
+    "name": "Tile image with a texture",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "TIM",
+    "name": "PSX TIM",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "TM2",
+    "name": "PS2 TIM2",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "TTC",
+    "name": "TrueType font collection",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "TTF",
+    "name": "TrueType font",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "TXT",
+    "name": "Text",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "UBRL",
+    "name": "Unicode Text format",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "UBRL6",
+    "name": "Unicode Text format 6dot",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "UIL",
+    "name": "X-Motif UIL table",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "UYVY",
+    "name": "16bit/pixel interleaved YUV",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "VDA",
+    "name": "Truevision Targa image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "VICAR",
+    "name": "Video Image Communication And Retrieval",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "VID",
+    "name": "Visual Image Directory",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "VIFF",
+    "name": "Khoros Visualization image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "VIPS",
+    "name": "VIPS image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "VST",
+    "name": "Truevision Targa image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "WBINFO",
+    "name": "Amiga Workbench Icon",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "WBMP",
+    "name": "Wireless Bitmap (level 0) image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "WEBM",
+    "name": "Open Web Media",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "WEBP",
+    "name": "WebP Image Format",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "WMV",
+    "name": "Windows Media Video",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "WPG",
+    "name": "Word Perfect Graphics",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "X3F",
+    "name": "Sigma Camera RAW Format",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "XBM",
+    "name": "X Windows system bitmap (black and white)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "XC",
+    "name": "Constant image uniform color",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "XCF",
+    "name": "GIMP image",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "XPM",
+    "name": "X Windows system pixmap (color)",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "XPS",
+    "name": "Microsoft XML Paper Specification",
+    "read": true,
+    "write": false
+  },
+  {
+    "id": "XV",
+    "name": "Khoros Visualization image",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "Y",
+    "name": "Raw yellow samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "YAML",
+    "name": "The image format and characteristics",
+    "read": false,
+    "write": true
+  },
+  {
+    "id": "YCBCR",
+    "name": "Raw Y, Cb, and Cr samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "YCBCRA",
+    "name": "Raw Y, Cb, Cr, and alpha samples",
+    "read": true,
+    "write": true
+  },
+  {
+    "id": "YUV",
+    "name": "CCIR 601 4:1:1 or 4:2:2",
+    "read": true,
+    "write": true
+  }
+]
