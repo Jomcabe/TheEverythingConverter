@@ -1,38 +1,149 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="Free local file conversions, from everyday documents to scientific data. No file uploads or accounts.">
-<title>Everything Converter | Jocabe</title>
+<meta name="description" content="Free file conversion for documents, images, media, tables, archives, and scientific data.">
+<title>File converter | Jocabe</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<script type="module" src="/src/app.js"></script>
 </head>
 <body>
-<header class="site-header"><a href="/" class="brand">jocabe<span>.com</span></a><div class="header-links"><a href="#formats">All formats</a><a href="https://github.com/Jomcabe/TheEverythingConverter" target="_blank" rel="noopener">Source on GitHub</a></div></header>
+<header class="site-header"><a class="brand" href="/">jocabe.com</a></header>
 <main>
-<section class="intro"><p class="eyebrow">A useful little corner of the internet</p><h1>Everything Converter<span>.</span></h1><p class="lead">Everyday files. Unusual files. Your lab’s weird files.<br>Choose what you have, then what you need.</p><div class="promises"><span>Free to use</span><span>Files stay on your device</span><span>No account</span></div></section>
-<section class="converter" aria-label="File converter">
-<div class="panels"><section class="panel input-panel"><div class="panel-heading"><h2>Convert from</h2><span class="small-label" id="input-count">Your file</span></div>
-<label for="source-format" class="sr-only">Input format</label><select id="source-format"></select>
-<div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Choose files or drop files here"><svg width="42" height="47" viewBox="0 0 42 47" fill="none" aria-hidden="true"><path d="M8 2h17l12 12v30H8z" stroke="currentColor" stroke-width="1.6"/><path d="M25 2v13h12M16 26h13M16 33h9" stroke="currentColor" stroke-width="1.6"/></svg><strong>Drop your files here</strong><span>or <u>choose files</u></span><small>Multiple files welcome · Up to 128 MiB each</small></div>
-<input type="file" id="file-input" multiple hidden><div id="file-list" class="file-list"></div><button class="text-button" id="clear-files" hidden>Clear files</button>
+<h1>File converter</h1>
+<p>Files are processed on your device and are not uploaded.</p>
+<section id="dropzone" class="converter dropzone" aria-label="File conversion">
+<div class="panels">
+<section class="panel input-panel">
+<h2>Files</h2>
+<label for="file-input">Select files</label>
+<input type="file" id="file-input" multiple>
+<p class="small-label" id="input-count" hidden></p>
+<div id="file-list" class="file-list"></div>
+<button class="text-button" id="clear-files" hidden>Clear files</button>
+<h2>Input</h2>
+<label for="source-format">Input format</label>
+<select id="source-format"></select>
 </section>
-<section class="panel output-panel"><div class="panel-heading"><h2>Convert to</h2><span class="small-label" id="target-count"></span></div><label class="sr-only" for="target-format">Output format</label><select id="target-format"></select>
-<div class="output-description"><span class="output-extension" id="output-extension">PDF</span><h3 id="output-title">PDF document</h3><p id="route-note"></p></div>
-<details class="options"><summary>Conversion options</summary><div class="option-fields"><label>Dataset, sheet, or table <input id="dataset" placeholder="First dataset / first sheet" type="text"></label><label>CSV delimiter <select id="delimiter"><option value=",">Comma</option><option value=";">Semicolon</option><option value="&#9;">Tab</option><option value=" ">Space</option></select></label><label>Skip numeric header rows <input id="skip-rows" type="number" min="0" value="0"></label><label>Image quality <input id="quality" type="number" min="1" max="100" value="92"></label><label>Companion files (document images)<input type="file" id="companions" multiple></label></div></details>
-<button id="convert" class="primary" disabled>Choose a file to start</button><button id="cancel" class="text-button" hidden>Cancel conversion</button>
-</section></div>
-<div id="status" role="status" aria-live="polite" class="status"><span class="status-icon" aria-hidden="true">✓</span><span>Conversions happen here, in your browser. Your files are never uploaded.</span></div>
+<section class="panel output-panel">
+<h2>Output</h2>
+<label for="target-format">Output format</label>
+<select id="target-format"></select>
+<p class="small-label" id="target-count" hidden></p>
+<div class="output-description">
+<span class="output-extension" id="output-extension" hidden></span>
+<h3 id="output-title" hidden></h3>
+<p id="route-note"></p>
+</div>
+<details class="options">
+<summary>Options</summary>
+<div class="option-fields">
+<label for="dataset">Dataset, sheet, or table</label>
+<input id="dataset" placeholder="First dataset or sheet" type="text">
+<label for="delimiter">CSV delimiter</label>
+<select id="delimiter"><option value=",">Comma</option><option value=";">Semicolon</option><option value="&#9;">Tab</option><option value=" ">Space</option></select>
+<label for="skip-rows">Header rows to skip</label>
+<input id="skip-rows" type="number" min="0" value="0">
+<label for="quality">Image quality</label>
+<input id="quality" type="number" min="1" max="100" value="92">
+<label for="companions">Companion files</label>
+<input type="file" id="companions" multiple>
+</div>
+</details>
+<p class="actions"><button id="convert" class="primary" disabled>Convert</button> <button id="cancel" class="text-button" hidden>Cancel conversion</button></p>
+</section>
+</div>
+<div id="status" role="status" aria-live="polite" class="status"><span class="status-icon" aria-hidden="true" hidden></span><span></span></div>
 <div id="results" class="results" aria-label="Converted files"></div>
 </section>
-<div class="quick-picks"><span>Try a conversion</span><button data-pair="document:docx|pdf:pdf">Word to PDF</button><button data-pair="spectrum:spa|spectrum:csv">SPA to CSV</button><button data-pair="atom:cif|atom:xyz">CIF to XYZ</button><button data-pair="media:mp4|media:mp3">Video to MP3</button><button data-pair="table:xlsx|table:csv">Excel to CSV</button><button data-pair="image:heic|image:jpg">HEIC to JPG</button></div>
-<section id="formats" class="catalog"><div class="section-header"><div><p class="eyebrow">From .docx to .what-is-this</p><h2>A very large toolbox.</h2></div><a id="download-catalog" href="#">Download format list</a></div><p class="catalog-intro"><span id="catalog-count"></span> Search by extension, format, or field. Pick a format to see its actual conversion options.</p>
-<div class="catalog-controls"><label for="format-search" class="sr-only">Search formats</label><input id="format-search" type="search" placeholder="Search formats: PDF, XRD, MATLAB, crystal…"><label for="category-filter" class="sr-only">Filter category</label><select id="category-filter"><option value="">Every category</option></select></div>
-<div id="category-chips" class="category-chips"></div><p id="search-count" class="small-label"></p><div id="format-grid" class="format-grid"></div><button id="show-more" class="secondary">Show more formats</button></section>
-<section class="notes"><div><h2>Free, without a catch.</h2><p>The work happens on your computer. There are no conversion credits, accounts, or paid APIs. Engines download only when needed, so the first conversion can take a little longer.</p></div><div><h2>A few honest limits.</h2><p>Formats are containers, not magic. Some conversions drop layout, metadata, layers, or precision. Large files may exceed your device’s memory. The note above the convert button explains each route.</p></div></section>
-<details class="unsupported"><summary>What about formats that need more than a browser?</summary><p>Legacy binary Word (.doc), legacy PowerPoint (.ppt), DWG, SolidWorks parts, encrypted PDFs, vendor instrument project files, and DRM-protected ebooks need specialized tools. They are not advertised as working web conversions. The <a href="https://github.com/Jomcabe/TheEverythingConverter">desktop app</a> adds LibreOffice support for legacy Office files and more memory for large media.</p><p>For archival or proprietary scientific data, export an open exchange format from the instrument software first. Converting diffraction data does not turn it into a crystal structure.</p></details>
-<footer><span>Built by <a href="/">Jose Carvajal-Beltran</a></span><span><a href="https://github.com/Jomcabe/TheEverythingConverter">Open source</a> · Unlisted experiment</span></footer>
+<p class="quick-picks">Conversions:
+<a data-pair="document:docx|pdf:pdf" href="#dropzone">DOCX to PDF</a>,
+<a data-pair="spectrum:spa|spectrum:csv" href="#dropzone">SPA to CSV</a>,
+<a data-pair="atom:cif|atom:xyz" href="#dropzone">CIF to XYZ</a>,
+<a data-pair="media:mp4|media:mp3" href="#dropzone">MP4 to MP3</a>,
+<a data-pair="table:xlsx|table:csv" href="#dropzone">XLSX to CSV</a>,
+<a data-pair="image:heic|image:jpg" href="#dropzone">HEIC to JPG</a>.
+</p>
+<section id="formats" class="catalog">
+<h2>Supported formats</h2>
+<p><a id="download-catalog" href="#">Download format list</a></p>
+<span id="catalog-count" hidden></span>
+<div class="catalog-controls">
+<label for="format-search">Search</label>
+<input id="format-search" type="search" placeholder="Extension, format, or category">
+<label for="category-filter">Category</label>
+<select id="category-filter"><option value="">All categories</option></select>
+</div>
+<p id="category-chips" class="category-chips"></p>
+<p id="search-count" class="small-label"></p>
+<table>
+<thead><tr><th scope="col">Extension</th><th scope="col">Format</th><th scope="col">Category</th></tr></thead>
+<tbody id="format-grid" class="format-grid"></tbody>
+</table>
+<p><button id="show-more" class="secondary">Show more formats</button></p>
+</section>
+<section class="notes">
+<h2>Limits</h2>
+<p>Files can be up to 128 MiB each. The first conversion downloads the required engine; large files may exceed the browser’s memory.</p>
+<p>Conversions can change page layout, metadata, layers, or numeric precision. Legacy DOC/PPT files, native CAD files, encrypted files, and some instrument formats require desktop software.</p>
+</section>
+<section>
+<h2>Source</h2>
+<p><a href="https://github.com/Jomcabe/TheEverythingConverter">Everything Converter on GitHub</a>. The repository includes the web source and desktop application.</p>
+</section>
 </main>
-</body></html>
+<script type="module">
+import './src/app.js';
+
+// Keep the existing upload handlers for drag and drop. The native input opens the picker.
+const zone = document.getElementById('dropzone');
+zone.onclick = null;
+zone.onkeydown = null;
+
+// Adapt the existing catalog renderer without changing its selection handlers.
+const rows = document.getElementById('format-grid');
+function tableRows() {
+  for (const item of [...rows.children]) {
+    if (item.matches('tr')) continue;
+    const row = document.createElement('tr');
+    if (item.matches('.format-card')) {
+      const extension = item.querySelector('.ext');
+      const category = item.querySelector('small');
+      item.title = category.textContent;
+      category.textContent = category.textContent.split(' · ')[0];
+      row.insertCell().append(extension);
+      row.insertCell().append(item);
+      row.insertCell().append(category);
+      rows.append(row);
+    } else {
+      row.insertCell().colSpan = 3;
+      row.firstElementChild.append(item);
+      rows.append(row);
+    }
+  }
+}
+new MutationObserver(tableRows).observe(rows, { childList: true });
+tableRows();
+
+// Keep category shortcuts as ordinary links with their existing handlers and data.
+for (const button of document.getElementById('category-chips').children) {
+  const link = document.createElement('a');
+  for (const attribute of button.attributes) link.setAttribute(attribute.name, attribute.value);
+  link.href = '#formats';
+  link.textContent = button.textContent;
+  link.onclick = button.onclick;
+  button.replaceWith(link);
+}
+
+// Keep the disabled action label literal while app.js updates its enabled state.
+const action = document.getElementById('convert');
+function actionLabel() {
+  if (action.textContent === 'Choose a file to start') action.textContent = 'Convert';
+}
+new MutationObserver(actionLabel).observe(action, { childList: true });
+actionLabel();
+</script>
+</body>
+</html>
